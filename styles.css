@@ -1,0 +1,308 @@
+/*
+ * CSS Variables for consistent theming
+ * These can be easily modified to change the look site-wide
+ */
+ :root {
+    --primary-color: #00843D;       /* Main brand color */
+    --secondary-color: #00C853;     /* Accent color */
+    --text-color: #333;             /* Main text color */
+    --light-gray: #f5f5f5;          /* Background color */
+    --white: #ffffff;               /* Card/container color */
+    --shadow: 0 4px 8px rgba(0,0,0,0.1); /* Default shadow */
+    --transition: all 0.3s ease;    /* Animation timing */
+}
+
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base body styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-gray);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navigation styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100; /* Ensures nav stays above other content */
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+/* Active/hover state for navigation links */
+.nav-links a:hover, 
+.nav-links a.active {
+    color: var(--secondary-color);
+}
+
+/* Home page specific styles */
+.home-container {
+    max-width: 1200px; /* Limits width on large screens */
+    margin: 2rem auto; /* Centers container */
+    padding: 0 1rem; /* Padding on mobile */
+    text-align: center;
+    flex: 1; /* Pushes footer down */
+}
+
+.welcome-text {
+    max-width: 800px;
+    margin: 2rem auto;
+    font-size: 1.1rem;
+    color: #555; /* Slightly muted text */
+}
+
+/* Circular image container with shadow */
+.circular-image {
+    width: 400px;
+    height: 400px;
+    margin: 2rem auto;
+    border-radius: 50%; /* Creates circle */
+    overflow: hidden; /* Ensures image stays within circle */
+    box-shadow: var(--shadow);
+}
+
+/* Ensures image fills container while maintaining aspect ratio */
+.circular-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Call-to-action button styles */
+.start-button {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 0.8rem 2rem;
+    border-radius: 2rem; /* Pill-shaped button */
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 1rem;
+    transition: var(--transition);
+}
+
+/* Button hover effects */
+.start-button:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 5px 15px rgba(0, 200, 83, 0.3);
+}
+
+/* Recipes page specific styles */
+.hero-banner {
+    width: 100%;
+    height: 300px;
+    overflow: hidden; /* Ensures no scrollbars */
+}
+
+.hero-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers area */
+}
+
+.recipe-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    flex: 1; /* Pushes footer down */
+}
+
+/* Filter controls section */
+.preference-selectors {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on small screens */
+    gap: 1.5rem; /* Space between elements */
+    justify-content: center;
+    margin: 2rem 0;
+    padding: 1rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+/* Individual filter dropdown container */
+.selector {
+    min-width: 200px; /* Minimum width before wrapping */
+}
+
+.selector label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+/* Dropdown select element styling */
+.selector select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Filter button styling */
+.regenerate-btn {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    align-self: flex-end; /* Aligns with bottom of select elements */
+    transition: var(--transition);
+}
+
+/* Button hover effect */
+.regenerate-btn:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Recipe cards grid layout */
+.recipe-grid {
+    display: grid;
+    /* Responsive grid - cards will wrap and fill available space */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem; /* Space between cards */
+    margin: 2rem 0;
+}
+
+/* Individual recipe card styling */
+.recipe-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden; /* Ensures rounded corners clip content */
+    box-shadow: var(--shadow);
+    transition: var(--transition); /* For hover effects */
+}
+
+/* Card hover effect */
+.recipe-card:hover {
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+}
+
+/* Link container for entire card */
+.recipe-link {
+    text-decoration: none;
+    color: inherit; /* Inherits text color from parent */
+    display: block;
+    height: 100%; /* Ensures link covers entire card */
+}
+
+/* Recipe image styling */
+.recipe-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Ensures images fill space while maintaining aspect ratio */
+}
+
+/* Recipe text content area */
+.recipe-card-content {
+    padding: 1.5rem;
+}
+
+.recipe-card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color); /* Uses theme color */
+}
+
+.recipe-card p {
+    color: #666; /* Slightly muted text */
+    font-size: 0.9rem;
+}
+
+/* "No results" message styling */
+.no-results {
+    grid-column: 1 / -1; /* Spans full grid width */
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+/* Footer styling */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto; /* Pushes footer to bottom */
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+    /* Adjust navigation for small screens */
+    nav {
+        padding: 1rem;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+    }
+    
+    /* Make circular image smaller on mobile */
+    .circular-image {
+        width: 300px;
+        height: 300px;
+    }
+    
+    /* Stack filter controls vertically on mobile */
+    .preference-selectors {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* Full width dropdowns on mobile */
+    .selector {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    /* Full width button on mobile */
+    .regenerate-btn {
+        width: 100%;
+        max-width: 300px;
+        align-self: center;
+    }
+    
+    /* Single column layout for recipes on mobile */
+    .recipe-grid {
+        grid-template-columns: 1fr;
+    }
+}

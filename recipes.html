@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes - Meal Genie</title>
+    
+    <!-- Contains all styling for the page -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 
+        Navigation Bar
+        - Consistent across all pages
+        - Contains logo and navigation links
+        - Active state shows current page
+    -->
+    <nav>
+        <div class="logo">Meal Genie</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="recipes.html" class="active">Recipes</a>
+        </div>
+    </nav>
+
+    <!-- 
+        Hero Banner
+        - Full-width image at top of recipes page
+        - Uses relative image path
+    -->
+    <div class="hero-banner">
+        <img src="images/Herobanner.png" alt="Assorted fresh ingredients for cooking">
+    </div>
+
+    <!-- 
+        Main Content Container
+        - Contains all recipe content and filters
+    -->
+    <main class="recipe-container">
+        <!-- Page Heading and Subtitle -->
+        <h1>Find Your Perfect Recipe</h1>
+        <p class="subtitle">Select your preferences to discover delicious meal ideas:</p>
+
+        <!-- 
+            Filter Controls Section
+            - Contains dropdowns for protein, vegetables, and diet
+            - "Regenerate" button to apply filters
+        -->
+        <div class="preference-selectors">
+            <!-- Protein Selection Dropdown -->
+            <div class="selector">
+                <label for="protein">Protein</label>
+                <select id="protein">
+                    <option value="">Any Protein</option>
+                    <option value="tofu">Tofu</option>
+                    <option value="chickpeas">Chickpeas</option>
+                    <option value="paneer">Paneer</option>
+                </select>
+            </div>
+
+            <!-- Vegetable Selection Dropdown -->
+            <div class="selector">
+                <label for="vegetable">Vegetables</label>
+                <select id="vegetable">
+                    <option value="">Any Vegetable</option>
+                    <option value="spinach">Spinach</option>
+                    <option value="bell-peppers">Bell Peppers</option>
+                    <option value="mushrooms">Mushrooms</option>
+                </select>
+            </div>
+
+            <!-- Dietary Preference Dropdown -->
+            <div class="selector">
+                <label for="diet">Diet</label>
+                <select id="diet">
+                    <option value="">Any Diet</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="vegan">Vegan</option>
+                </select>
+            </div>
+
+            <!-- Filter Action Button -->
+            <button id="regenerate" class="regenerate-btn">Find Recipes</button>
+        </div>
+
+        <!-- 
+            Recipe Cards Grid
+            - Responsive grid layout
+            - Each card contains a recipe with image and details
+        -->
+        <div class="recipe-grid">
+            <!-- Recipe Card 1: Mushroom Paneer Stir Fry -->
+            <div class="recipe-card" data-diet="vegetarian" data-protein="paneer" data-vegetable="mushrooms">
+                <!-- 
+                    Recipe Link
+                    - Wraps entire card content
+                    - Opens recipe in new tab
+                -->
+                <a href="https://cookpad.com/in/recipes/15134550-garlic-mushroom-paneer-stirfry" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="recipe-link">
+                    <!-- Recipe Image -->
+                    <img src="images/mushroom-paneer-stir-fry.jpg" alt="Mushroom Paneer Stir Fry">
+                    <!-- Recipe Content -->
+                    <div class="recipe-card-content">
+                        <h3>Mushroom Paneer Stir Fry</h3>
+                        <p>A flavorful Indian-inspired dish with mushrooms and paneer in a rich sauce.</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Recipe Card 2: Chickpea Curry -->
+            <div class="recipe-card" data-diet="vegetarian" data-protein="chickpeas" data-vegetable="bell-peppers">
+                <a href="https://www.noracooks.com/chickpea-curry/" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="recipe-link">
+                    <img src="images/chickpea-curry.jpg" alt="Chickpea Curry">
+                    <div class="recipe-card-content">
+                        <h3>Chickpea Curry</h3>
+                        <p>Hearty chickpeas cooked in aromatic spices with bell peppers.</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Recipe Card 3: Paneer Mushroom Masala -->
+            <div class="recipe-card" data-diet="vegetarian" data-protein="paneer" data-vegetable="mushrooms">
+                <a href="https://myspicetrunk.com/2020/08/28/dhaba-style-mushoom-paneer-masala/" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="recipe-link">
+                    <img src="images/paneer-mushroom.jpg" alt="Paneer Mushroom Masala">
+                    <div class="recipe-card-content">
+                        <h3>Paneer Mushroom Masala</h3>
+                        <p>Creamy paneer and earthy mushrooms in a rich tomato-based gravy.</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Recipe Card 4: Paneer Tikka -->
+            <div class="recipe-card" data-diet="vegetarian" data-protein="paneer" data-vegetable="bell-peppers">
+                <a href="https://www.cookwithmanali.com/paneer-tikka/" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="recipe-link">
+                    <img src="images/paneer-skewers.jpg" alt="Paneer Tikka">
+                    <div class="recipe-card-content">
+                        <h3>Paneer Tikka</h3>
+                        <p>Marinated paneer and bell peppers grilled to perfection.</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Recipe Card 5: Tofu Spinach Stir Fry -->
+            <div class="recipe-card" data-diet="vegan" data-protein="tofu" data-vegetable="spinach">
+                <a href="https://www.wellplated.com/tofu-stir-fry/" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="recipe-link">
+                    <img src="images/tofu-spinach-stir-fry.png" alt="Tofu Spinach Stir Fry">
+                    <div class="recipe-card-content">
+                        <h3>Tofu Spinach Stir Fry</h3>
+                        <p>Protein-packed tofu with fresh spinach in a garlic sauce.</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Recipe Card 6: Tofu Veggie Wrap -->
+            <div class="recipe-card" data-diet="vegan" data-protein="tofu" data-vegetable="bell-peppers">
+                <a href="https://veganonboard.com/easy-tofu-wraps/" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="recipe-link">
+                    <img src="images/tofu-wrap.jpg" alt="Tofu Veggie Wrap">
+                    <div class="recipe-card-content">
+                        <h3>Tofu Veggie Wrap</h3>
+                        <p>Flavorful tofu and crisp veggies in a whole wheat wrap.</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Recipe Card 7: Tofu Rice Bowl -->
+            <div class="recipe-card" data-diet="vegan" data-protein="tofu" data-vegetable="mushrooms">
+                <a href="https://fraicheliving.com/crispy-tofu-bowl/" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="recipe-link">
+                    <img src="images/tofu-rice-bowl.jpg" alt="Tofu Rice Bowl">
+                    <div class="recipe-card-content">
+                        <h3>Tofu Rice Bowl</h3>
+                        <p>Satisfying bowl with tofu, mushrooms, and flavorful sauce.</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Recipe Card 8: Chickpea Spinach Salad -->
+            <div class="recipe-card" data-diet="vegan" data-protein="chickpeas" data-vegetable="spinach">
+                <a href="https://spainonafork.com/spinach-salad-with-spiced-chickpeas-recipe/" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="recipe-link">
+                    <img src="images/chickpea-salad.jpg" alt="Chickpea Spinach Salad">
+                    <div class="recipe-card-content">
+                        <h3>Chickpea Spinach Salad</h3>
+                        <p>Fresh salad with chickpeas, spinach, and lemon dressing.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- 
+        Footer Section
+        - Contains copyright information
+        - Consistent across all pages
+    -->
+    <footer>
+        <p>© 2025 Meal Genie. All rights reserved.</p>
+    </footer>
+
+    <!-- 
+        JavaScript File
+        - Contains all interactive functionality
+    -->
+    <script src="recipes.js"></script>
+</body>
+</html>
